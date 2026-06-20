@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>足彩竞猜 · 再访与收藏 · 主站</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+        }
+
+        body {
+            background: #edf6f9;
+            color: #1a2a2f;
+            line-height: 1.6;
+            padding: 0 1.2rem;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem 0 4rem;
+        }
+
+        /* hero 区 — 蓝绿渐变 + 柔和网格 */
+        .hero {
+            background: linear-gradient(145deg, #c7e5e8 0%, #d8f0f2 100%);
+            border-radius: 40px 40px 24px 24px;
+            padding: 3rem 2rem 2.8rem;
+            margin-bottom: 3.2rem;
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.6), 0 12px 24px -12px rgba(37, 99, 98, 0.18);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: 
+                linear-gradient(rgba(95, 158, 160, 0.08) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(95, 158, 160, 0.08) 1px, transparent 1px);
+            background-size: 28px 28px;
+            pointer-events: none;
+        }
+
+        .hero h1 {
+            font-size: 2.4rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            color: #124e4f;
+            margin-bottom: 0.8rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 640px;
+            color: #1d5b5b;
+            position: relative;
+            z-index: 1;
+            margin-bottom: 0.2rem;
+        }
+
+        .hero .sub {
+            font-size: 1rem;
+            color: #2c6e6e;
+            margin-top: 0.6rem;
+            opacity: 0.85;
+        }
+
+        /* 网格卡片通用 */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.8rem;
+            margin: 2.8rem 0 3rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 24px;
+            padding: 1.8rem 1.4rem 1.6rem;
+            box-shadow: 0 6px 14px rgba(57, 114, 115, 0.06), 0 2px 4px rgba(0,0,0,0.02);
+            border: 1px solid rgba(164, 205, 206, 0.35);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 28px -8px rgba(33, 99, 98, 0.14);
+            border-color: #83bcbe;
+        }
+
+        .card h3 {
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: #105a5a;
+            margin-bottom: 0.6rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .card h3 span {
+            background: #d0edef;
+            border-radius: 30px;
+            padding: 0.1rem 0.4rem;
+            font-size: 0.8rem;
+            color: #1c5a5a;
+        }
+
+        .card p {
+            color: #2d4a4a;
+            font-size: 0.98rem;
+        }
+
+        /* 说明区 — 图文混合 */
+        .detail-section {
+            background: white;
+            border-radius: 32px;
+            padding: 2.4rem 2rem;
+            margin: 2.8rem 0;
+            box-shadow: 0 6px 18px rgba(55, 110, 110, 0.04);
+            border: 1px solid rgba(148, 192, 193, 0.25);
+        }
+
+        .detail-section h2 {
+            font-size: 1.7rem;
+            font-weight: 500;
+            color: #0f5353;
+            margin-bottom: 1.6rem;
+            letter-spacing: -0.01em;
+        }
+
+        .detail-section .feature-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .feature-item {
+            flex: 1 1 200px;
+            background: #f3fbfb;
+            border-radius: 20px;
+            padding: 1.2rem 1rem;
+            border-left: 4px solid #6bb5b6;
+        }
+
+        .feature-item strong {
+            color: #0f5c5c;
+            font-weight: 600;
+            display: block;
+            margin-bottom: 0.2rem;
+        }
+
+        .note {
+            background: #e4f3f3;
+            border-radius: 40px;
+            padding: 1.2rem 1.6rem;
+            font-size: 0.98rem;
+            color: #1d5454;
+            border: 1px dashed #86c3c4;
+            margin: 1.2rem 0;
+        }
+
+        /* FAQ 摘要 — 蓝绿点缀折线 */
+        .faq-wrap {
+            background: #f4fcfc;
+            border-radius: 32px;
+            padding: 2rem 1.8rem;
+            margin: 3rem 0 2.8rem;
+            border: 1px solid #b8dbdc;
+        }
+
+        .faq-wrap h2 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: #0d5959;
+            margin-bottom: 1.6rem;
+        }
+
+        .faq-item {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #d5eaea;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-item .q {
+            font-weight: 500;
+            color: #1c5f5f;
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+
+        .faq-item .a {
+            color: #385d5d;
+            font-size: 0.95rem;
+            padding-left: 0.4rem;
+        }
+
+        /* 底部链接 */
+        .footer-links {
+            text-align: center;
+            border-top: 1px solid #cde1e2;
+            padding-top: 2.4rem;
+            margin-top: 2rem;
+            color: #3b6868;
+        }
+
+        .footer-links a {
+            color: #176b6b;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px dotted #9ac8c8;
+            transition: border 0.2s;
+        }
+
+        .footer-links a:hover {
+            border-bottom: 1px solid #0a6e6e;
+        }
+
+        .footer-links .small-note {
+            display: block;
+            margin-top: 1.2rem;
+            font-size: 0.85rem;
+            opacity: 0.7;
+        }
+
+        .btn-ghost {
+            display: inline-block;
+            background: transparent;
+            border: 1px solid #3e8b8b;
+            color: #1b6464;
+            padding: 0.5rem 1.8rem;
+            border-radius: 60px;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: 0.2s;
+            text-decoration: none;
+            margin-top: 1rem;
+        }
+
+        .btn-ghost:hover {
+            background: #daf0f0;
+            border-color: #176b6b;
+        }
+
+        /* 响应式调整 */
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 1.9rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+            .hero {
+                padding: 2rem 1.2rem;
+            }
+            .detail-section {
+                padding: 1.8rem 1.2rem;
+            }
+            .faq-wrap {
+                padding: 1.6rem 1.2rem;
+            }
+            .card-grid {
+                gap: 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 1rem 0 3rem;
+            }
+            body {
+                padding: 0 0.8rem;
+            }
+            .detail-section .feature-row {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <!-- hero 区：再次访问与收藏的氛围 -->
+        <div class="hero">
+            <h1>再次遇见，依旧熟悉</h1>
+            <p>每一次回来，都能找到你关注的节奏。收藏这个角落，让<strong>足彩竞猜</strong>的陪伴更从容。</p>
+            <div class="sub">—— 不追逐喧嚣，只在意你持续的关注</div>
+        </div>
+
+        <!-- 优势区：网格卡片 -->
+        <div class="card-grid">
+            <div class="card">
+                <h3>📌 随时收藏 <span>再访</span></h3>
+                <p>把页面添加到书签，等于为自己留一条安静的通道。无论是赛前看看讨论，还是赛后回味分析，都不必从头寻找。</p>
+            </div>
+            <div class="card">
+                <h3>🧩 持续更新 <span>关注</span></h3>
+                <p>内容保持自己的步调，不赶热点，不堆砌信息。适合习惯固定节奏、希望获得稳定参考的朋友。</p>
+            </div>
+            <div class="card">
+                <h3>🌿 低干扰 <span>体验</span></h3>
+                <p>克制的界面，蓝绿底色，温和对比。让你把注意力放在真正关心的内容上，而不是被弹窗和广告打扰。</p>
+            </div>
+        </div>
+
+        <!-- 说明区：为什么再来 & 如何收藏  -->
+        <div class="detail-section">
+            <h2>熟悉的地方，总有新的细节</h2>
+            <div class="feature-row">
+                <div class="feature-item">
+                    <strong>🔹 不是第一次来？</strong>
+                    记不住链接没关系，收藏一次，之后随时打开。适合那些想保持定期浏览、又不愿被推送淹没的朋友。
+                </div>
+                <div class="feature-item">
+                    <strong>🔸 持续关注的价值</strong>
+                    竞猜资讯、赛事动向、玩法梳理…… 页面结构相对稳定，但内容会自然更新。每次回来都能快速衔接上一次的阅读。
+                </div>
+                <div class="feature-item">
+                    <strong>🔹 干净的书签位</strong>
+                    不必注册、不要求登录。你只需要一个浏览器书签，或直接在地址栏输入熟悉的网址：<a href="https://main-zcjc.com" style="color: #1a6b6b; text-decoration: underline; font-weight: 500;">足彩竞猜</a>。
+                </div>
+            </div>
+
+            <div class="note">
+                ⏳ 偶尔回来，看看页面有什么变化；也可以把认为有用的段落分享给同样关注的朋友。持续关注不等于每天打开，而是知道有一个地方始终在那里。
+            </div>
+        </div>
+
+        <!-- FAQ 摘要（蓝绿点缀、轻松语调） -->
+        <div class="faq-wrap">
+            <h2>❓ 一些你可能想问的</h2>
+            <div class="faq-item">
+                <span class="q">Q：我上次看到一半的内容，再访问还能找到吗？</span>
+                <span class="a">页面会保留主要板块，但具体文章或数据可能按节奏更新。建议把你特别在意的段落收藏或截图。</span>
+            </div>
+            <div class="faq-item">
+                <span class="q">Q：是否需要注册或关注社交账号？</span>
+                <span class="a">完全不需要。这个网站就是独立的页面，你只需要通过 <a href="https://main-zcjc.com" style="font-weight:500; color:#145c5c;">足彩竞猜</a> 直接访问即可，没有额外步骤。</span>
+            </div>
+            <div class="faq-item">
+                <span class="q">Q：内容会一直保持不变吗？</span>
+                <span class="a">整体结构有延续性，但细节会逐渐调整。保持关注，可能会发现一些细微的优化和补充。</span>
+            </div>
+            <div style="text-align: right; margin-top: 1rem;">
+                <a href="https://main-zcjc.com" class="btn-ghost">足彩竞猜</a>
+            </div>
+        </div>
+
+        <!-- 底部链接 自然嵌入 -->
+        <div class="footer-links">
+            <p>如果你已经收藏过，现在可以直接打开书签；如果还没收藏，不妨把 <a href="https://main-zcjc.com">足彩竞猜</a> 加入浏览器书签栏。</p>
+            <span class="small-note">温和、持续、保持自己的节奏</span>
+        </div>
+
+    </div>
+</body>
+</html>
